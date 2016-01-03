@@ -1,0 +1,63 @@
+html, body {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 16px;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.pannel {
+	float: left;
+	width: calc(100% - 500px);
+	height: calc(100% - 50px);
+	padding: 25px;
+}
+
+.pannel--right {
+	float: right;
+	width: 400px;
+}
+
+.outputBox {
+	width: 100%;
+	height: 400px;
+	margin: 0 auto 50px;
+	border: 1px solid #000;
+	overflow: scroll;
+}
+
+p {
+	display: block;
+	margin: 15px 15px 0;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.intro__text {
+}
+
+.user {
+	color: red;
+}
+
+.cpu {
+	color: blue;
+}
+
+label {
+	display: block;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+
+#userInput {
+	font-size: 14px;
+	display: block;
+	margin: 0 auto;
+}
+

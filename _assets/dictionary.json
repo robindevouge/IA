@@ -1,0 +1,10 @@
+[
+		{"word": "bonjour", "answer": "Tu t'es pas foulé !"},
+		{"word": "coucou", "answer": "Beuh !"},
+		{"word": "hello", "answer": "Je l'ai dit en premier !"},
+		{"word": "kedis", "answer": "On est de la tribu à ce que je vois !"},
+		{"word": "kikou", "answer": "Pitié pas ça !"},
+		{"word": "konami", "answer": "Facile : &uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A"},
+		{"word": "salut", "answer": "On s'est déjà croisé quelque part ?"},
+		{"word": "zzz!!!", "answer": "Not a real answer"}
+]
