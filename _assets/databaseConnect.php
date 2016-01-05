@@ -1,9 +1,9 @@
 <?php
 function Connect(){
 $mysql_server="127.0.0.1";
-$mysql_userName="smoothclicker";
-$mysql_password=file_get_contents("../../passwords/.password");
-$mysql_databaseName="smoothclicker_1";
+$mysql_userName="robindevouge_be";
+$mysql_password=file_get_contents(".password");
+$mysql_databaseName="robindevouge_be";
 
   /* Connecting, selecting database */
 //$link = new mysqli($mysql_server, $mysql_userName, $mysql_password,$mysql_databaseName);
