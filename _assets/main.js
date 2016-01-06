@@ -23,6 +23,8 @@ $(document).ready(function(){
 		});
 	};
 
+	//userSay and cpuSay are use so often that I made functions for them
+	
 	function userSay(word) {
 		$(".outputBox").append('<p><span class="user">User :</span> ' + word + '</p>');
 		$(".outputBox").animate({
@@ -40,6 +42,11 @@ $(document).ready(function(){
 	function clearInput() {
 		userInput.value = "";
 	};
+	
+	// getInput is the first step, it checks the "mode" the user is in and reacts properly
+	// I use modes so it is really easy to add a new function as an independant mode, and each of them can be easily disabled without interrupting other mode's functioning
+	// some words in the "default" mode can switch the mode
+	// each mode has its own deactivation words and its own logic (e.g. the "new word" mode expects the answer to the unknown word instead of a word to test in the dictionary)
 
 	function getInput() {
 		$("input").focus();
@@ -62,6 +69,8 @@ $(document).ready(function(){
 			}
 		});
 	};
+	
+	// this is the default mode
 
 	function modeWord() {
 		switch (userInput.value) {
@@ -82,6 +91,8 @@ $(document).ready(function(){
 				testIfWordExists();
 		}
 	};
+	
+	// this is the mode that can add new words
 
 	function modeNew() {
 		switch (userInput.value) {
@@ -107,6 +118,13 @@ $(document).ready(function(){
 				addToDictionary();
 		}
 	};
+	
+	// this it the math mode
+	// math mode uses a jQuery plugin : math.js
+	// originally i used the 'eval()' method, but it was somewhat dangerous
+	// eval can parse more than math expressions, like javascript, so if the user knows it it has a risk of script injection - not good !
+	// i couldn't write my own math parser
+	// so i used the plugin
 
 	function modeMath() {
 		switch (userInput.value) {
@@ -138,6 +156,9 @@ $(document).ready(function(){
 				cpuSay("= " + result);
 		}
 	};
+	
+	// this function compares the typed word with those from the dictionary
+	// if it is an unknown word, engaging "new word" mode
 
 	function testIfWordExists() {
 		for (i = 0; i < dictionary.length; i++) {
