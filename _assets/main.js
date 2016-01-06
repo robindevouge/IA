@@ -14,14 +14,15 @@ $(document).ready(function(){
 		doesWordExists,
 		inputMode = "word", //default input mode
 		dictionary = [],
-		abortKeywords = ["annuler", "annule", "stop", "retour", "rien"]
-		newEntry = [];
+		abortKeywords = ["annuler", "annule", "stop", "retour", "rien"];
 
 	function getDictionary() {
-//		$.getJSON("_assets/dictionary.json", function (dict) {
+		console.log("fuck");
 		$.getJSON("_assets/getDictionary.php", function (data) {
 			dictionary = data;
+			console.log(dictionary);
 		});
+		console.log(dictionary)
 	};
 
 	//userSay and cpuSay are use so often that I made functions for them
@@ -177,13 +178,11 @@ $(document).ready(function(){
 	};
 
 	function addToDictionary() {
-		newEntry = {word: userWordL, answer: newAnswer};
-		dictionary.push(newEntry);
-
-		// waiting for a way to send updated dictionary to server
+		$.post('_assets/addToDictionary.php', {word: userWordL, answer: newAnswer}, function(){
+			getDictionary();
+		});
 
 		inputMode = "word";
-		getDictionary(); //refreshes the dictionary after adding a new word
 	}
 
 

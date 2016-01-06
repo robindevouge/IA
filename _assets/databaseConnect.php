@@ -1,6 +1,6 @@
 <?php
 
-	function ConnectMYSQL(){
+	function Connect(){
 		/*
 		$mysql_server="robindevouge.be.mysql";
 		$mysql_userName="robindevouge_be";
