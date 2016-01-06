@@ -1,21 +1,24 @@
 <?php
-function Connect(){
-$mysql_server="127.0.0.1";
-$mysql_userName="robindevouge_be";
-$mysql_password=file_get_contents(".password");
-$mysql_databaseName="robindevouge_be";
 
-  /* Connecting, selecting database */
-//$link = new mysqli($mysql_server, $mysql_userName, $mysql_password,$mysql_databaseName);
-//if ($link->connect_errno) {
-//    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-//   die("exiting");
-//}
+	function ConnectMYSQL(){
+		/*
+		$mysql_server="robindevouge.be.mysql";
+		$mysql_userName="robindevouge_be";
+		$mysql_password="UHgTE7BJ"
+//		$mysql_password=file_get_contents("./assets/.password");
+		$mysql_databaseName="robindevouge_be";
+		*/
+		
+		$mysql_server="localhost";
+		$mysql_userName="root";
+		$mysql_password="root";
+		$mysql_databaseName="mysql";
 
 
-$link=new PDO('mysql:host=localhost;dbname='.$mysql_databaseName.';charset=utf8',$mysql_userName, $mysql_password);
-$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$databaseConfiguration='mysql:host='.$mysql_server.';dbname='.$mysql_databaseName.';charset=utf8';//would be different with a Microsoft server
+		$link=new PDO($databaseConfiguration,$mysql_userName, $mysql_password);
+		$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return $link;
+	}
 
-return $link;
-}
 ?>

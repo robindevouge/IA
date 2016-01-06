@@ -18,8 +18,9 @@ $(document).ready(function(){
 		newEntry = [];
 
 	function getDictionary() {
-		$.getJSON("_assets/dictionary.json", function (dict) {
-			dictionary = dict;
+//		$.getJSON("_assets/dictionary.json", function (dict) {
+		$.getJSON("_assets/getDictionary.php", function (data) {
+			dictionary = data;
 		});
 	};
 
@@ -182,6 +183,7 @@ $(document).ready(function(){
 		// waiting for a way to send updated dictionary to server
 
 		inputMode = "word";
+		getDictionary(); //refreshes the dictionary after adding a new word
 	}
 
 
