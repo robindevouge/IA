@@ -4,7 +4,7 @@
 		/*
 		$mysql_server="robindevouge.be.mysql";
 		$mysql_userName="robindevouge_be";
-		$mysql_password="UHgTE7BJ"
+		$mysql_password="UHgTE7BJ";
 //		$mysql_password=file_get_contents("./assets/.password");
 		$mysql_databaseName="robindevouge_be";
 		*/
